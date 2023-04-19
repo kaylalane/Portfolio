@@ -1,0 +1,147 @@
+nav {
+  display: flex;
+  gap: 1rem;
+  flex-flow: row wrap;
+  list-style-type: none;
+
+  li {
+    font-size: 14pt;
+    font-weight: 800;
+    display: block;
+    flex-basis: auto;
+  }
+}
+
+/* Button styling */
+.menu-toggle {
+  display: inline-block;
+  margin: 0;
+  padding: 8px;
+  padding-bottom: 3px;
+}
+
+.menu-button {
+  padding: 0;
+}
+
+.main-menu {
+  position: absolute;
+  display: none;
+  left: -200px;
+  top: 0;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: visible;
+  transition: left 0.3s ease, box-shadow 0.3s ease;
+  z-index: 999;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 2.5em 0 0;
+    min-height: 100%;
+    width: 200px;
+    background: black;
+    display: flex;
+    flex-flow: column wrap;
+  }
+
+  a {
+    display: block;
+    padding: 0.75em 15px;
+    line-height: 1em;
+    font-size: 1em;
+    color: white;
+    text-decoration: none;
+  }
+
+  a:hover,
+  a:focus {
+    color: var(--darkpink);
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .menu-close {
+    position: absolute;
+    padding-left: 2rem;
+    left: 0;
+    top: 0;
+  }
+
+  &:target,
+  &[aria-expanded="true"] {
+    display: block;
+    left: 0;
+    outline: none;
+  }
+
+  &:target .menu-close,
+  &[aria-expanded="true"] .menu-close {
+    z-index: 1001;
+  }
+
+  &:target ul,
+  &[aria-expanded="true"] ul {
+    position: relative;
+    z-index: 1000;
+  }
+}
+
+@supports (position: fixed) {
+  .main-menu,
+  .main-menu:target + .backdrop,
+  .main-menu[aria-expanded="true"] + .backdrop {
+    position: fixed;
+  }
+}
+
+
+@media (min-width: 768px) {
+  nav {
+  }
+  
+  nav ul {
+    justify-content: center;
+  }
+  .menu-toggle,
+  .main-menu .menu-close {
+    display: none;
+  }
+
+  /* Undo positioning of off-canvas menu */
+  .main-menu {
+    position: relative;
+    left: auto;
+    top: auto;
+    height: auto;
+    display: block;
+  }
+
+  .main-menu ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+
+    /* Undo off-canvas styling */
+    padding: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    height: auto;
+    width: auto;
+    background: none;
+  }
+  .main-menu li:first-child {
+    margin-right: auto;
+  }
+  .main-menu a {
+    color: black;
+    border: 0 !important; /* Remove borders from off-canvas styling */
+  }
+
+  .main-menu a:hover,
+  .main-menu a:focus {
+    background: none; /* Remove background from off-canvas styling */
+    color: #6b1848;
+  }
+}

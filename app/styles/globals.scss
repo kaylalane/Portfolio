@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Gloock&family=PT+Serif&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --white: #f9f8f8;
+  --blue: #0d1f38;
+  --yellow: #fff43a;
+  --darkpurple: #1e0f37;
+  --lightpurple: #a978f2;
+  --darkpink: #6b1848;
+  --lightblue: #8aa8a9;
+  --lightpink: #9e728c;
+  --offwhite: #efeded;
+  --tan: #e1c6a1;
+  --russian-violet: #290438ff;
+  --languid-lavender: #e3d8f1ff;
+  --cyber-grape: #594573;
+  --englighviolet: #3f2e56;
+  --weirdpurple: #401f3e;
+  --vanilla: #faf2a1;
+  --cyber-grape-contrast: #d3f0ff;
+  --contrast-blue: #435e6a;
+  --burnt-orange: #ba5a31;
+
+  --paragraph: "PT Serif", serif;
+  --heading: "Gloock", serif;
+  --border-radius: 5px;
+  --transition-duration: 0.5s;
+  --transition-easing: cubic-bezier(0.5, 0, 0.5, 1);
+  --animation-duration: 0.8s;
+
+  background-color: white;
+  color: black;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  font-family: var(--paragraph);
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+a {
+  color: black;
+  &:hover {
+  }
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+article {
+  padding:1rem 2rem;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  padding: 1.5rem;
+  background-color: white;
+  color: black;
+  border-radius: var(--border-radius);
+}
+
+.section-black {
+  background-color: black;
+  color: white;
+  
+}
+
+header {
+  padding: 1rem;
+}
+.button {
+  background-color: var(--darkpink);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+
+  &:hover {
+    background-color: rgb(107, 24, 72, 0.9);
+    text-decoration: none;
+  }
+}
+
+.name span {
+  font-family: var(--heading);
+  font-size: 4rem;
+  color: var(--darkpink);
+  display: block;
+}
+
+#intro [class*="fa-"] {
+  font-size: 200%;
+}
+
+#intro h2 {
+  font-size: 4rem;
+}
+
+#intro ul {
+  padding: 1rem 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.projects-container {
+  display: flex;
+  gap: 1rem;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+.details-box {
+  color: black;
+  background-color: white;
+  border-radius: 5px;
+  padding: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+
+  [class*="fa-"] {
+    font-size: 200%;
+  }
+}
+
+#contact {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.message {
+  color: black;
+  height: 200px;
+  vertical-align: top;
+}
+
+form {
+  display: flex;
+  flex-flow: column;
+  gap: 2rem;
+
+  input,
+  textarea {
+    padding: 1rem;
+    border-radius: 10px;
+    width: clamp(100px, 500px, 80vw);
+    border: solid black 2px;
+  }
+
+  input:focus,
+  textarea:focus,
+  textarea:focus-within {
+    border-color: #6b1848;
+  }
+  #submit-button {
+    border: none;
+  }
+}
+
+footer {
+  text-align: center;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+
+  ul {
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0;
+    column-gap: 1rem;
+    font-size: 24px;
+  }
+}
+
+
+/** Media Queries **/
+
+@media (min-width: 576px) {
+  article {
+    min-height: 100vh;
+  }
+
+    section {
+    flex-basis: 40%;
+  }
+
+}
+
+@media (min-width: 800px) {
+  .projects-container {
+    flex-flow: row wrap;
+  }
+}
+
+/*
+ Larger screen styling
+ Horizontal menu
+*/
