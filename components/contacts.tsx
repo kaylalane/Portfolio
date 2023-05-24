@@ -67,7 +67,7 @@ export default function Contact() {
             aria-invalid={errors.mail ? "true" : "false"}
           />
           
-          <input type="submit" role="button" className="button" id="submit-button"/>
+          <input type="submit" role="button" className="button bg-accent" id="submit-button"/>
         </form>
       )}
     </article>

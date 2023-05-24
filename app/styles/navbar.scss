@@ -1,15 +1,5 @@
-nav {
-  display: flex;
-  gap: 1rem;
-  flex-flow: row wrap;
-  list-style-type: none;
-
-  li {
-    font-size: 14pt;
-    font-weight: 800;
-    display: block;
-    flex-basis: auto;
-  }
+:root {
+  --highlights: #a978f2;
 }
 
 /* Button styling */
@@ -24,67 +14,69 @@ nav {
   padding: 0;
 }
 
+/*
+ Default styles + Mobile first
+ Offscreen menu style
+*/
 .main-menu {
   position: absolute;
   display: none;
   left: -200px;
   top: 0;
   height: 100%;
-  overflow-y: scroll;
   overflow-x: visible;
   transition: left 0.3s ease, box-shadow 0.3s ease;
   z-index: 999;
+}
 
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 2.5em 0 0;
-    min-height: 100%;
-    width: 200px;
-    background: black;
-    display: flex;
-    flex-flow: column wrap;
-  }
+.main-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 2.5em 0 0;
+  min-height: 100%;
+  width: 200px;
+  background: var(--highlights);
+  display: flex;
+  flex-flow: column wrap;
+}
 
-  a {
-    display: block;
-    padding: 0.75em 15px;
-    line-height: 1em;
-    font-size: 1em;
-    color: white;
-    text-decoration: none;
-  }
+.main-menu a {
+  display: block;
+  padding: 0.75em 15px;
+  line-height: 1em;
+  text-decoration: none;
+}
 
-  a:hover,
-  a:focus {
-    color: var(--darkpink);
-    background: rgba(0, 0, 0, 0.5);
-  }
+.main-menu .menu-close {
+  position: absolute;
+  padding-left: 2rem;
+  left: 0;
+  top: 0;
+}
 
-  .menu-close {
-    position: absolute;
-    padding-left: 2rem;
-    left: 0;
-    top: 0;
-  }
+/*
+ On small devices, allow it to toggle...
+*/
+/*
+ :target for non-JavaScript
+ [aria-expanded] will be used if/when JavaScript is added to improve interaction, though it's completely optional.
+*/
+.main-menu:target,
+.main-menu[aria-expanded="true"] {
+  display: block;
+  left: 0;
+  outline: none;
+}
 
-  &:target,
-  &[aria-expanded="true"] {
-    display: block;
-    left: 0;
-    outline: none;
-  }
+.main-menu:target .menu-close,
+.main-menu[aria-expanded="true"] .menu-close {
+  z-index: 1001;
+}
 
-  &:target .menu-close,
-  &[aria-expanded="true"] .menu-close {
-    z-index: 1001;
-  }
-
-  &:target ul,
-  &[aria-expanded="true"] ul {
-    position: relative;
-    z-index: 1000;
-  }
+.main-menu:target ul,
+.main-menu[aria-expanded="true"] ul {
+  position: relative;
+  z-index: 1000;
 }
 
 @supports (position: fixed) {
@@ -95,11 +87,17 @@ nav {
   }
 }
 
+/*
+ Larger screen styling
+ Horizontal menu
+*/
 
 @media (min-width: 768px) {
   nav {
+    max-width: 1200px;
+    margin: 0 auto;
   }
-  
+
   nav ul {
     justify-content: center;
   }
@@ -135,13 +133,12 @@ nav {
     margin-right: auto;
   }
   .main-menu a {
-    color: black;
     border: 0 !important; /* Remove borders from off-canvas styling */
   }
 
   .main-menu a:hover,
   .main-menu a:focus {
     background: none; /* Remove background from off-canvas styling */
-    color: #6b1848;
+    color: var(--highlights);
   }
 }

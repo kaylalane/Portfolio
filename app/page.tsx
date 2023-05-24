@@ -9,9 +9,9 @@ export default function Home() {
     <>
         <article id="intro">
           <p className="name">
-            Hi, my name is <span>Kayla Lane</span>
+            Hi, my name is <span className=" block text-5xl text-accent">Kayla Lane</span>
           </p>
-          <h2>I create websites.</h2>
+          <h2>I create accessible websites.</h2>
           <p>
             I&apos;m a front-end developer specializing in HTML, CSS, React.js
             and Next.js.

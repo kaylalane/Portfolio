@@ -5,7 +5,10 @@ import "../app/styles/navbar.scss";
 export default function Navbar() {
   return (
     <header>
-      <button className="menu-button">
+      <button
+        aria-label="Open Menu"
+        className="menu-button bg-white rounded-lg"
+      >
         <a href="#main-menu" id="main-menu-toggle" className="menu-toggle">
           <svg
             width="30px"
@@ -27,7 +30,7 @@ export default function Navbar() {
         </a>
       </button>
 
-      <nav id="main-menu" className="main-menu">
+      <nav id="main-menu" className="main-menu group/nav">
         <a
           href="#main-menu-toggle"
           id="main-menu-close"
@@ -52,21 +55,21 @@ export default function Navbar() {
             ></path>
           </svg>
         </a>
-        <ul className="">
+        <ul className=" group-target:">
           <li className="">
-            <Link href="">
-              <h1 className="text-3xl">KL</h1>
+            <Link href="/" aria-label="Link to home" className="group-aria-expanded/item:hover:text-blackgroup-aria-expanded/item:hover:text-black group-target/item:hover:text-black">
+              <h1 className="text-3xl ">KL</h1>
             </Link>
           </li>
           <li>
-            <a href="/">home</a>
+            <Link href="/">home</Link>
           </li>
           <li>
-            <a href="#projects">projects</a>
+            <Link href="/projects">projects</Link>
           </li>
 
           <li>
-            <a href="#contact">contact</a>
+            <Link href="#contact">contact</Link>
           </li>
         </ul>
       </nav>

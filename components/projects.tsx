@@ -2,8 +2,6 @@
 import styles from "../styles/projects.module.scss";
 import { projects } from "./data";
 import Link from "next/link";
-import { FaAd, FaGithubSquare, FaArrowAltCircleUp } from "react-icons/fa";
-
 export default function Projects() {
   return (
     <article id="projects" className="">
@@ -11,10 +9,10 @@ export default function Projects() {
 
       <div className="projects-container ">
         {projects.map((project) => (
-          <section key={project.title} className="bg-black text-white">
+          <section key={project.title} className="bg-black text-white dark:bg-accent dark:text-black ">
             <h3 className="text-xl">{project.title}</h3>
 
-            <p className="font-normal text-secondary dark:text-secondary leading-loose">
+            <p className="t font-normal leading-loose">
               {project.description}
             </p>
             
@@ -22,17 +20,19 @@ export default function Projects() {
               {project.technologies.map((tech) => (
                 <p
                   key={tech}
-                  className="font-normal text-secondary dark:text-secondary "
+                  className=" font-normal "
                 >
                   {tech}
                 </p>
               ))}
             </div>
             <div className="flex gap-2">
-              <a
+              <Link
                 href={project.github}
+                aria-label={"Github for " + project.title}
                 className="flex w-12 h-12 py-4 my-2 bg-white rounded-lg justify-center items-center"
                 target="_blank" rel="noreferrer"
+                
               >
                 <svg
                   width="30px"
@@ -51,9 +51,11 @@ export default function Projects() {
                     strokeLinejoin="round"
                   ></path>
                 </svg>
-              </a>
-              <a
+                <span className="sr-only">Github</span>
+              </Link>
+              <Link
                 href={project.link}
+                aria-label={"Link to deployed website of " + project.title}
                 className="flex w-12 h-12 py-4 my-2 bg-white rounded-lg justify-center items-center"
                 target="_blank" rel="noreferrer"
               >
@@ -80,7 +82,9 @@ export default function Projects() {
                     strokeLinecap="round"
                   ></path>
                 </svg>
-              </a>
+                <span className="sr-only">LinkedIn</span>
+
+              </Link>
             </div>
           </section>
         ))}
