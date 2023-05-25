@@ -8,7 +8,7 @@
       "src": "/icon_x16.png",
       "sizes": "16x16",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "any maskable"
     },
     {
       "src": "/icon_x32.png",
@@ -28,5 +28,5 @@
   "start_url": "/",
   "display": "fullscreen",
   "orientation": "landscape",
-  "theme_color": "#8174AC"
+  "theme_color": "#aa80ff"
 }

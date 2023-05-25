@@ -29,7 +29,7 @@ export default function Contact() {
   };
 
   return (
-    <article id="contact">
+    <article id="contact" className=" min-h-screen">
       <h2 className="mx-auto text-3xl pb-6">Contact</h2>
 
       {submit ? (
@@ -37,8 +37,6 @@ export default function Contact() {
       ) : (
         <form
           id="contact-form"
-          action="mailto:kaylalane188@icloud.com"
-          method="post"
           onSubmit={handleSubmit(onSubmit)}
         >
           {/* include validation with required or other standard HTML validation rules */}
@@ -67,7 +65,7 @@ export default function Contact() {
             aria-invalid={errors.mail ? "true" : "false"}
           />
           
-          <input type="submit" role="button" className="button bg-accent" id="submit-button"/>
+          <input type="submit" role="button" className="button text-white bg-primary dark:bg-darkaccent  dark:text-black" id="submit-button"/>
         </form>
       )}
     </article>

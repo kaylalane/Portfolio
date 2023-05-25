@@ -9,7 +9,7 @@ export default function Projects() {
 
       <div className="projects-container ">
         {projects.map((project) => (
-          <section key={project.title} className="bg-black text-white dark:bg-accent dark:text-black ">
+          <section key={project.title} className="bg-primary text-white dark:bg-secondary dark:text-black ">
             <h3 className="text-xl">{project.title}</h3>
 
             <p className="t font-normal leading-loose">
@@ -30,7 +30,7 @@ export default function Projects() {
               <Link
                 href={project.github}
                 aria-label={"Github for " + project.title}
-                className="flex w-12 h-12 py-4 my-2 bg-white rounded-lg justify-center items-center"
+                className="flex w-12 h-12 py-4 my-2 bg-white dark:text-white rounded-lg justify-center items-center"
                 target="_blank" rel="noreferrer"
                 
               >

@@ -9,12 +9,12 @@ module.exports = {
     extend: {
       colors: {
         lightbg: "#ffffff",
-        darkbg: "#121212",
+        darkbg: "#000000",
         purple: "#B3A2ED",
-        text: "#222222",
-        primary: "#7029ff",
-        secondary: "#f1eaff",
-        accent: "#aa80ff",
+        text: "#000000",
+        primary: "#884DFF",
+        secondary: "#ffffff",
+        darkaccent: "#aa80ff",
       },
     },
   },

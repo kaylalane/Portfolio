@@ -2,23 +2,26 @@
 import Footer from "@/components/footer";
 import Navbar from "../components/navbar";
 import "./styles/globals.scss";
-import Head from "next/head";
+import Head from "next/script";
+import Script from "next/script";
 
 export const metadata = {
-  title: "Kayla Marie Lane",
-  description: "Front End Developer",
+  title: "Kayla Lane",
+  description: "Kayla Lane's Front End Developer Portfolio",
   icons: {
-    icon: "/icon_x16.png"
+    icon: "/icon_x16.png",
   },
   openGraph: {
     type: "website",
     url: "https://www.kaylamarielane.com/",
     title: "Kayla Marie Lane",
-    description: "Kayla Lane's Portfolio Website",
+    description: "Kayla Lane's Front End Developer Portfolio",
     siteName: "Kayla Lane",
-    images: [{
-      url: "/icon_x16.png",
-    }],
+    images: [
+      {
+        url: "/icon_x16.png",
+      },
+    ],
   }
 };
 
@@ -30,38 +33,28 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title key="title">Kayla Lane</title>
-        <meta
-          name="description"
-          content="Kayla Lane's Front-End Developer Portfolio"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link rel="icon" type="image/png" sizes="32x32" href="/icon_x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/icon_x16.png" />
-        <meta name="theme-color" content="#8174AC" />
-        <meta property="og:url" content="https://www.kaylamarielane.com/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Kayla Lane's Portfolio" />
-        <meta
-          property="og:description"
-          content="Kayla Lane's Front-End Developer Portfolio."
-        />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <script
-          src="https://kit.fontawesome.com/99affd1b0f.js"
-          crossOrigin="anonymous"
-        ></script>
-        <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-        <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+        <head>
+          <Script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-H312EDY6E5"
+          ></Script>
+          <Script
+            id="google-analytics"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+      window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-H312EDY6E5', {
+    page_path: window.location.pathname,
+    });
+      `,
+            }}
+          />
+        </head>
       </Head>
-      <body className=" text-text dark:bg-darkbg dark:text-white">
+      <body className=" text-text bg-lightbg dark:bg-darkbg dark:text-white">
         <Navbar />
         <main>{children}</main>
         <Footer />

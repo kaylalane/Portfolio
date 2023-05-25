@@ -1,10 +1,18 @@
 /* eslint-disable react/react-in-jsx-scope */
+"use client";
 import Link from "next/link";
 import "../app/styles/navbar.scss";
+
+const links = [
+  { href: "#projects", label: "Projects" },
+  { href: "#contact", label: "Contact" },
+  { href: "", label: "" },
+];
 
 export default function Navbar() {
   return (
     <header>
+      
       <button
         aria-label="Open Menu"
         className="menu-button bg-white rounded-lg"
@@ -55,23 +63,31 @@ export default function Navbar() {
             ></path>
           </svg>
         </a>
-        <ul className=" group-target:">
+        <ul className=" font-extrabold text-lg">
           <li className="">
-            <Link href="/" aria-label="Link to home" className="group-aria-expanded/item:hover:text-blackgroup-aria-expanded/item:hover:text-black group-target/item:hover:text-black">
+            <Link
+              href="/"
+              aria-label="Link to home"
+              className="hover:text-primary  dark:hover:text-darkaccent"
+            >
               <h1 className="text-3xl ">KL</h1>
             </Link>
           </li>
           <li>
-            <Link href="/">home</Link>
+            <a href="/" className="text-black hover:text-primary dark:text-white dark:hover:text-darkaccent">
+              home
+            </a>
           </li>
           <li>
-            <Link href="/projects">projects</Link>
+            <a href="#projects" className="hover:text-primary dark:hover:text-darkaccent">projects</a>
           </li>
-
+          
           <li>
-            <Link href="#contact">contact</Link>
+            <a href="#contact" className="hover:text-primary dark:hover:text-darkaccent">contact</a>
           </li>
         </ul>
+
+        <div></div>
       </nav>
     </header>
   );
