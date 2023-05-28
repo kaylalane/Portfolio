@@ -1,6 +1,5 @@
 /* eslint-disable react/react-in-jsx-scope */
 "use client";
-import Link from "next/link";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { init, sendForm } from "emailjs-com";
@@ -11,7 +10,6 @@ export default function Contact() {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 

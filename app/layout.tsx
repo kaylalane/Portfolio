@@ -1,12 +1,13 @@
 /* eslint-disable react/react-in-jsx-scope */
 import Footer from "@/components/footer";
 import Navbar from "../components/navbar";
-import "./styles/globals.scss";
-import Head from "next/script";
-import Script from "next/script";
+import "../styles/globals.scss";
 
 export const metadata = {
-  title: "Kayla Lane",
+  title: {
+    default: "Kayla Lane",
+    template: "%s | Kayla Lane",
+  },
   description: "Kayla Lane's Front End Developer Portfolio",
   icons: {
     icon: "/icon_x16.png",
@@ -20,9 +21,30 @@ export const metadata = {
     images: [
       {
         url: "/icon_x16.png",
+        width: 16,
+        height: 16,
       },
     ],
-  }
+    locale: "en-US",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  twitter: {
+    title: "Kayla Lane",
+    card: "summary_large_image",
+  },
+  verification: {
+    google: "G-H312EDY6E5",
+  },
 };
 
 export default function RootLayout({
@@ -31,32 +53,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <Head>
-        <head>
-          <Script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-H312EDY6E5"
-          ></Script>
-          <Script
-            id="google-analytics"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `
-      window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-H312EDY6E5', {
-    page_path: window.location.pathname,
-    });
-      `,
-            }}
-          />
-        </head>
-      </Head>
+    <html lang="en" className="dark">
       <body className=" text-text bg-lightbg dark:bg-darkbg dark:text-white">
         <Navbar />
-        <main>{children}</main>
+        <main className="min-h-screen">{children}</main>
         <Footer />
       </body>
     </html>

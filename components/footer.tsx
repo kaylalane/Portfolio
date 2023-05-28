@@ -27,7 +27,7 @@ export default function Footer() {
       <div>
 
         <p>
-          <small>&copy; 2023 Kayla Lane. All rights reserved.</small>
+          <small>&copy; 2023 Kayla Lane.</small>
         </p>
       </div>
     </footer>

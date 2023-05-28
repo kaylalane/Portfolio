@@ -1,18 +1,22 @@
-import { getAllPosts } from "../lib/cms";
 import Link from "next/link";
+import { allBlogs } from "contentlayer/generated";
 
 export default async function Blog() {
-  const posts = await getAllPosts();
 
   return (
-    <div>
-      {posts.map((post) => (
-        <Link href={`/blog/${post.slug}`} key={post.title}>
-          <div>
-            <h1>{post.title}</h1>
+    <article>
+      {allBlogs.map((post) => (
+        <Link
+          key={post.url}
+          className="flex flex-col space-y-1 mb-4 text-xl"
+          href={`/blog/${post.url}`}
+        >
+          <div className="w-full flex flex-col">
+            <h2>{post.title}</h2>
+            <p className="text-sm">{post.date.substring(0, 10)}</p>
           </div>
         </Link>
       ))}
-    </div>
+    </article>
   );
 }

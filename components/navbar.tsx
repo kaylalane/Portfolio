@@ -1,18 +1,17 @@
 /* eslint-disable react/react-in-jsx-scope */
 "use client";
 import Link from "next/link";
-import "../app/styles/navbar.scss";
-
+import Toggle from "./ui/Toggle";
+import "../styles/navbar.scss";
 const links = [
-  { href: "#projects", label: "Projects" },
-  { href: "#contact", label: "Contact" },
-  { href: "", label: "" },
+  { label: "home", href: "/" },
+  { label: "projects", href: "/#projects" },
+  { label: "contact", href: "/#contact" },
+  { label: "blog", href: "/blog" },
 ];
-
 export default function Navbar() {
   return (
     <header>
-      
       <button
         aria-label="Open Menu"
         className="menu-button bg-white rounded-lg"
@@ -73,21 +72,20 @@ export default function Navbar() {
               <h1 className="text-3xl ">KL</h1>
             </Link>
           </li>
+          {links.map((link) => (
+            <li key={link.label}>
+              <a
+                href={link.href}
+                className="hover:text-primary dark:hover:text-darkaccent"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
           <li>
-            <a href="/" className="text-black hover:text-primary dark:text-white dark:hover:text-darkaccent">
-              home
-            </a>
-          </li>
-          <li>
-            <a href="#projects" className="hover:text-primary dark:hover:text-darkaccent">projects</a>
-          </li>
-          
-          <li>
-            <a href="#contact" className="hover:text-primary dark:hover:text-darkaccent">contact</a>
+            <Toggle />
           </li>
         </ul>
-
-        <div></div>
       </nav>
     </header>
   );

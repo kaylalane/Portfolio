@@ -1,5 +1,4 @@
 /* eslint-disable react/react-in-jsx-scope */
-import styles from "../styles/projects.module.scss";
 import { projects } from "./data";
 import Link from "next/link";
 export default function Projects() {
@@ -9,19 +8,17 @@ export default function Projects() {
 
       <div className="projects-container ">
         {projects.map((project) => (
-          <section key={project.title} className="bg-primary text-white dark:bg-secondary dark:text-black ">
+          <section
+            key={project.title}
+            className="bg-black text-white dark:bg-secondary dark:text-black "
+          >
             <h3 className="text-xl">{project.title}</h3>
 
-            <p className="t font-normal leading-loose">
-              {project.description}
-            </p>
-            
+            <p className="t font-normal leading-loose">{project.description}</p>
+
             <div className="flex gap-4 ">
               {project.technologies.map((tech) => (
-                <p
-                  key={tech}
-                  className=" font-normal "
-                >
+                <p key={tech} className=" font-normal ">
                   {tech}
                 </p>
               ))}
@@ -31,8 +28,8 @@ export default function Projects() {
                 href={project.github}
                 aria-label={"Github for " + project.title}
                 className="flex w-12 h-12 py-4 my-2 bg-white dark:text-white rounded-lg justify-center items-center"
-                target="_blank" rel="noreferrer"
-                
+                target="_blank"
+                rel="noreferrer"
               >
                 <svg
                   width="30px"
@@ -57,7 +54,8 @@ export default function Projects() {
                 href={project.link}
                 aria-label={"Link to deployed website of " + project.title}
                 className="flex w-12 h-12 py-4 my-2 bg-white rounded-lg justify-center items-center"
-                target="_blank" rel="noreferrer"
+                target="_blank"
+                rel="noreferrer"
               >
                 <svg
                   width="30px"
@@ -83,7 +81,6 @@ export default function Projects() {
                   ></path>
                 </svg>
                 <span className="sr-only">LinkedIn</span>
-
               </Link>
             </div>
           </section>
