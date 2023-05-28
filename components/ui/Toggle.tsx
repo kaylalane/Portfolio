@@ -1,10 +1,7 @@
-import { useState, useEffect, useContext } from "react";
+import { useState } from "react";
 import { Switch } from "@headlessui/react";
-import { ThemeContext } from "./ThemeContext";
 
 export default function Toggle() {
-  //const theme = useContext(ThemeContext);
-  const [theme, setTheme] = useState("dark");
   const [enabled, setEnabled] = useState(true);
 
   function onChange() {
@@ -12,7 +9,6 @@ export default function Toggle() {
     document.documentElement.classList.toggle("dark");
     window.sessionStorage.setItem("enabled", enabled.toString());
   }
-
 
   return (
     <Switch

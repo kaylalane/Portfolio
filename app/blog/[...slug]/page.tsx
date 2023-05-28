@@ -1,7 +1,5 @@
 import { Mdx } from "@/components/mdx-components";
-import { allBlogs, type Blog } from "contentlayer/generated";
-import { Metadata } from "next";
-import { useMDXComponent } from "next-contentlayer/hooks";
+import { allBlogs } from "contentlayer/generated";
 import { notFound } from "next/navigation";
 
 interface PostProps {
@@ -26,21 +24,12 @@ export async function generateStaticParams(): Promise<PostProps["params"][]> {
   }));
 }
 
-// Statically fetch post by slug
-export async function getStaticParams({ params }: PostProps) {
+ async function getStaticParams({ params }: PostProps) {
   const slug = params?.slug?.join("/");
   const post = allBlogs.find((post) => post.url === slug);
 
   return { props: { post } };
 }
-
-type BlogPostParams = {
-  params: {
-    slug: string;
-    title: string;
-    code: string;
-  };
-};
 
 export default async function BlogPost({ params }: PostProps) {
   const post = await getPostFromParams(params);
