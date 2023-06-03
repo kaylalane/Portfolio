@@ -14,7 +14,11 @@ export const Blog = defineDocumentType(() => ({
     description: {
       type: "string",
     },
-    date: {
+    lastUpdated: {
+      type: "date",
+      required: true,
+    },
+    publishedAt: {
       type: "date",
       required: true,
     },

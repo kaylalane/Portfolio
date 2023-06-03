@@ -24,7 +24,7 @@ export async function generateStaticParams(): Promise<PostProps["params"][]> {
   }));
 }
 
- async function getStaticParams({ params }: PostProps) {
+async function getStaticParams({ params }: PostProps) {
   const slug = params?.slug?.join("/");
   const post = allBlogs.find((post) => post.url === slug);
 

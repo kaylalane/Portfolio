@@ -26,6 +26,27 @@ body {
   margin: 0;
 }
 
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.opacity {
+  opacity: 0;
+}
+.displayNone {
+  display: none;
+}
+.visibility {
+  visibility: hidden;
+}
+
 ul {
   list-style-type: none;
   display: flex;
@@ -130,8 +151,6 @@ footer {
 /** Media Queries **/
 
 @media (min-width: 576px) {
- 
-  
   section {
     flex-basis: 40%;
   }
@@ -148,4 +167,3 @@ footer {
     background-color: black;
   }
 }
-

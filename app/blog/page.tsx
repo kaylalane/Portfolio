@@ -2,7 +2,6 @@ import Link from "next/link";
 import { allBlogs } from "contentlayer/generated";
 
 export default async function Blog() {
-
   return (
     <article>
       {allBlogs.map((post) => (
@@ -13,7 +12,7 @@ export default async function Blog() {
         >
           <div className="w-full flex flex-col">
             <h2>{post.title}</h2>
-            <p className="text-sm">{post.date.substring(0, 10)}</p>
+            <p className="text-sm">{post.publishedAt.substring(0, 10)}</p>
           </div>
         </Link>
       ))}
