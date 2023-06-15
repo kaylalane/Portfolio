@@ -1,34 +1,32 @@
-import { Menu } from '@headlessui/react'
+import { Menu } from "@headlessui/react";
+import "../../styles/navbar.scss";
 
-export default function Dropdown() {
+const links = [
+  { label: "home", href: "/" },
+  { label: "projects", href: "/#projects" },
+  { label: "contact", href: "/#contact" },
+  { label: "blog", href: "/blog" },
+];
+
+const Dropdown = () => {
   return (
     <Menu>
       <Menu.Button>More</Menu.Button>
       <Menu.Items>
-        <Menu.Item>
-          {({ active }) => (
-            <a
-              className={`${active && 'bg-blue-500'}`}
-              href="/account-settings"
-            >
-              Account settings
-            </a>
-          )}
-        </Menu.Item>
-        <Menu.Item>
-          {({ active }) => (
-            <a
-              className={`${active && 'bg-blue-500'}`}
-              href="/account-settings"
-            >
-              Documentation
-            </a>
-          )}
-        </Menu.Item>
-        <Menu.Item disabled>
-          <span className="opacity-75">Invite a friend (coming soon!)</span>
-        </Menu.Item>
+        {links.map((link) => {
+          return (
+            <Menu.Item key={link.label}>
+              {({ active }) => (
+                <a className={`${active && "bg-blue-500"}`} href={link.href}>
+                  {link.label}
+                </a>
+              )}
+            </Menu.Item>
+          );
+        })}
       </Menu.Items>
     </Menu>
-  )
-}
+  );
+};
+
+export default Dropdown;

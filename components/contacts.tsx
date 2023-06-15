@@ -36,18 +36,19 @@ export default function Contact() {
         <form
           id="contact-form"
           onSubmit={handleSubmit(onSubmit)}
+          className="text-black"
         >
           {/* include validation with required or other standard HTML validation rules */}
           <input
-          aria-label="Name"
+            aria-label="Name"
             style={errors.nameRequired && { border: "2px solid red" }}
             placeholder="Name"
             {...register("nameRequired", { required: true })}
           />
-          
+
           {/* errors will return when field validation fails  */}
           <input
-          aria-label="Email"
+            aria-label="Email"
             style={errors.mail && { border: "2px solid red" }}
             placeholder="Email"
             {...register("mail", { required: "Email Address is required" })}
@@ -55,15 +56,20 @@ export default function Contact() {
           />
 
           <textarea
-          aria-label="Type your message here."
+            aria-label="Type your message here."
             style={errors.messageRequired && { border: "2px solid red" }}
             placeholder="Send me a message!"
             className="message"
             {...register("messageRequired", { required: true })}
             aria-invalid={errors.mail ? "true" : "false"}
           />
-          
-          <input type="submit" role="button" className="button text-white bg-primary dark:bg-darkaccent  dark:text-black" id="submit-button"/>
+
+          <input
+            type="submit"
+            role="button"
+            className="button text-white bg-primary dark:bg-darkaccent  dark:text-black"
+            id="submit-button"
+          />
         </form>
       )}
     </article>

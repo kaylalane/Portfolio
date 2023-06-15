@@ -8,12 +8,12 @@ export default async function Home() {
   return (
     <>
       <article id="intro" className=" min-h-screen">
-        <p className="name">
-          Hi, my name is{" "}
-          <span className=" text-primary dark:text-darkaccent block text-5xl">
+        <div className="name">
+          <p>Hi, my name is </p>
+          <h1 className=" text-primary dark:text-darkaccent block text-5xl">
             Kayla Lane
-          </span>
-        </p>
+          </h1>
+        </div>
         <h2>I create accessible websites.</h2>
         <p>
           I&apos;m a front-end developer specializing in HTML, CSS, React.js and

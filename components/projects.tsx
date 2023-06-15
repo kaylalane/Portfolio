@@ -16,7 +16,7 @@ export default function Projects() {
 
             <p className="t font-normal leading-loose">{project.description}</p>
 
-            <div className="flex gap-4 ">
+            <div className="flex gap-4 py-1">
               {project.technologies.map((tech) => (
                 <p key={tech} className=" font-normal ">
                   {tech}

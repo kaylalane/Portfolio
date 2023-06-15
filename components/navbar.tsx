@@ -3,6 +3,8 @@
 import Link from "next/link";
 import Toggle from "./ui/Toggle";
 import "../styles/navbar.scss";
+import Dropdown from "./ui/Dropdown";
+import { useEffect, useState } from "react";
 const links = [
   { label: "home", href: "/" },
   { label: "projects", href: "/#projects" },
@@ -10,32 +12,36 @@ const links = [
   { label: "blog", href: "/blog" },
 ];
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isDropdown, setIsDropdown] = useState(false);
+
   return (
     <header>
-      <button
-        aria-label="Open Menu"
-        className="menu-button bg-white rounded-lg"
+      <a
+        href="#main-menu"
+        id="main-menu-toggle"
+        className="menu-toggle bg-white rounded-lg pb-2"
+        onClick={() => setIsOpen(!isOpen)}
       >
-        <a href="#main-menu" id="main-menu-toggle" className="menu-toggle">
-          <svg
-            width="30px"
-            height="30px"
+        <svg
+          width="30px"
+          height="30px"
+          strokeWidth="1.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          color="#ffffff"
+        >
+          <path
+            d="M3 5h18M3 12h18M3 19h18"
+            stroke="#000000"
             strokeWidth="1.5"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            color="#ffffff"
-          >
-            <path
-              d="M3 5h18M3 12h18M3 19h18"
-              stroke="#000000"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            ></path>
-          </svg>
-        </a>
-      </button>
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          ></path>
+        </svg>
+        <span className="sr-only">Open main menu</span>
+      </a>
 
       <nav id="main-menu" className="main-menu group/nav">
         <a
@@ -63,15 +69,7 @@ export default function Navbar() {
           </svg>
         </a>
         <ul className=" font-extrabold text-lg">
-          <li className="">
-            <Link
-              href="/"
-              aria-label="Link to home"
-              className="hover:text-primary  dark:hover:text-darkaccent"
-            >
-              <h1 className="text-3xl ">KL</h1>
-            </Link>
-          </li>
+          <li className="text-3xl">KL</li>
           {links.map((link) => (
             <li key={link.label}>
               <a

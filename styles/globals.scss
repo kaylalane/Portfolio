@@ -106,12 +106,6 @@ header {
   align-items: center;
 }
 
-.message {
-  color: black;
-  height: 200px;
-  vertical-align: top;
-}
-
 form {
   display: flex;
   flex-flow: column;
@@ -123,6 +117,11 @@ form {
     border-radius: 10px;
     width: clamp(100px, 500px, 80vw);
     border: solid black 2px;
+  }
+
+  .message {
+    height: 200px;
+    vertical-align: top;
   }
 
   #submit-button {

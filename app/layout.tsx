@@ -1,6 +1,8 @@
 /* eslint-disable react/react-in-jsx-scope */
 import Footer from "@/components/footer";
 import Navbar from "../components/navbar";
+import { Analytics } from "@vercel/analytics/react";
+
 import "../styles/globals.scss";
 
 export const metadata = {
@@ -56,7 +58,10 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className=" text-text bg-lightbg dark:bg-darkbg dark:text-white">
         <Navbar />
-        <main className="min-h-screen">{children}</main>
+        <main className="min-h-screen">
+          {children}
+          <Analytics />
+        </main>
         <Footer />
       </body>
     </html>
