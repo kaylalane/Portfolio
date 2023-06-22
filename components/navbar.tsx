@@ -4,7 +4,7 @@ import Toggle from "./ui/Toggle";
 import "../styles/navbar.scss";
 import { useState } from "react";
 const links = [
-  { label: "home", href: "/" },
+  { label: "hero", href: "/" },
   { label: "projects", href: "/#projects" },
   { label: "contact", href: "/#contact" },
 ];
