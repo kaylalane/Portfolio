@@ -1,20 +1,15 @@
 /* eslint-disable react/react-in-jsx-scope */
 "use client";
-import Link from "next/link";
 import Toggle from "./ui/Toggle";
 import "../styles/navbar.scss";
-import Dropdown from "./ui/Dropdown";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 const links = [
   { label: "home", href: "/" },
   { label: "projects", href: "/#projects" },
   { label: "contact", href: "/#contact" },
-  { label: "blog", href: "/blog" },
 ];
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDropdown, setIsDropdown] = useState(false);
-
   return (
     <header>
       <a
