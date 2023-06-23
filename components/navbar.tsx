@@ -75,6 +75,17 @@ export default function Navbar() {
               </a>
             </li>
           ))}
+          <li className=" ">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://blog.kaylamarielane.com/"
+              className=" bg-primary hover:bg-primary dark:bg-darkaccent dark:hover:bg-darkaccent rounded-xl transition-transform duration-500 hover:scale-125"
+            >
+              blog
+            </a>
+          </li>
+
           <li>
             <Toggle />
           </li>
