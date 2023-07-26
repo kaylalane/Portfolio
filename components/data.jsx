@@ -26,7 +26,7 @@ export const projects = [
   },
   {
     title: "Do it!",
-    link: "https://todo-fbd77.web.app/",
+    link: "https://todo-list-9b6c5.web.app/",
     github: "https://github.com/kaylalane/todo",
     description:
       "A community todo list to assistant developers with accountability.",
