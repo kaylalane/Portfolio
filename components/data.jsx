@@ -1,5 +1,13 @@
 export const projects = [
   {
+    title: "Project Management",
+    link: "https://app-management-six.vercel.app/",
+    github: "https://github.com/kaylalane/my-site",
+    description: "A Netflix clone.",
+    technologies: ["React.js", "Next.js", "Next Auth"],
+    picture: "/netflix-clone.png",
+  },
+  {
     title: "Language resources",
     link: "https://language-learner-ashy.vercel.app/",
     github: "https://github.com/kaylalane/language-learner",
@@ -8,14 +16,7 @@ export const projects = [
     technologies: ["React.js", "Sass"],
     picture: "/language-resources.png",
   },
-  {
-    title: "Netflix clone",
-    link: "https://netflix-dusky-tau.vercel.app/",
-    github: "https://github.com/kaylalane/netflix",
-    description: "A Netflix clone.",
-    technologies: ["React.js", "Next.js", "Sass"],
-    picture: "/netflix-clone.png",
-  },
+
   {
     title: "Trivia Game",
     link: "https://trivia-game-tawny.vercel.app/",

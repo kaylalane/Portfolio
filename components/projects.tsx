@@ -10,7 +10,7 @@ export default function Projects() {
         {projects.map((project) => (
           <section
             key={project.title}
-            className="bg-black text-white dark:bg-secondary dark:text-black "
+            className="bg-accent text-white dark:bg-secondary  "
           >
             <h3 className="text-xl">{project.title}</h3>
 

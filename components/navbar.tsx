@@ -80,7 +80,7 @@ export default function Navbar() {
               target="_blank"
               rel="noreferrer"
               href="https://blog.kaylamarielane.com/"
-              className=" bg-primary hover:bg-primary dark:bg-darkaccent dark:hover:bg-darkaccent rounded-xl transition-transform duration-500 hover:scale-125"
+              className=" bg-primary text-white hover:text-black hover:bg-primary  dark:bg-darkaccent dark:hover:bg-darkaccent dark:text-white rounded-xl transition-transform duration-500 hover:scale-125"
             >
               blog
             </a>
