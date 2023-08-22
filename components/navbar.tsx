@@ -15,7 +15,7 @@ export default function Navbar() {
       <a
         href="#main-menu"
         id="main-menu-toggle"
-        className="menu-toggle bg-white rounded-lg pb-2"
+        className="menu-toggle bg-white rounded-lg pb-4"
         onClick={() => setIsOpen(!isOpen)}
       >
         <svg

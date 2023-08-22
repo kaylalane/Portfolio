@@ -1,8 +1,9 @@
 /* eslint-disable react/react-in-jsx-scope */
 import Link from "next/link";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaTwitter, FaGithub } from "react-icons/fa";
 import Contact from "../components/contacts";
 import Projects from "../components/projects";
+import animations from "../styles/animations.module.scss";
 
 export default async function Home() {
   return (
@@ -22,16 +23,18 @@ export default async function Home() {
         <ul className="py-4 text-primary dark:text-darkaccent">
           <li>
             <Link
-              href="https://www.linkedin.com/in/kaylamarielane/"
-              aria-label="Kayla Lane's LinkedIn"
+              href="https://twitter.com/thekaylalane"
+              aria-label="Kayla Lane's Twitter"
+              className={animations.raised_hover}
             >
-              <FaLinkedin className="fa-linkedin" />
+              <FaTwitter className="fa-twitter" />
             </Link>
           </li>
           <li>
             <Link
               href="https://github.com/kaylalane"
               aria-label="Kayla Lane's Github"
+              className={animations.raised_hover}
             >
               <FaGithub className="fa-github" />
             </Link>

@@ -27,7 +27,7 @@ export default function Contact() {
   };
 
   return (
-    <article id="contact" className=" min-h-screen">
+    <article id="contact" className=" min-h-screen relative">
       <h2 className="mx-auto text-3xl pb-6">Contact</h2>
 
       {submit ? (

@@ -14,6 +14,8 @@
   color: black;
 }
 
+
+
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -70,9 +72,6 @@ section {
   flex-direction: column;
   flex-basis: 100%;
   flex: 1;
-  padding: 1.5rem;
-  background-color: white;
-  color: black;
   border-radius: var(--border-radius);
 }
 
@@ -129,6 +128,57 @@ form {
   }
 }
 
+.projects {
+  h3 {
+    font-size: 1.5rem;
+  }
+  h4 {
+    font-size: 1.2rem;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: .5rem;
+    display: flex;
+    gap: 1rem;
+    flex-flow: row wrap;
+    font-size: .9rem;
+    font-family: 'Sora', sans-serif;
+  }
+
+ img {
+    margin: 2rem 0 4rem ; 
+    border-left: 2px solid #246353;
+    border-top: 2px solid #246353;
+    border-bottom: 2px solid #246353;
+    border-radius: 25px;
+    padding: 1rem;
+  }
+
+  .reverse img {
+    border-left: none;
+    border-right: 2px solid #246353;
+  }
+
+  .details-box {
+    color: white;
+    background-color: #246353;
+    border-radius: 5px;
+    margin: .5rem 0;
+    padding: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    justify-content: flex-end;
+  }
+}
+
+
 footer {
   text-align: center;
   display: flex;
@@ -153,6 +203,51 @@ footer {
   section {
     flex-basis: 40%;
   }
+
+  .project {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 1rem;
+  }
+  
+  #projects img {
+    width: 60%;
+    grid-column: 1/10;
+    grid-row: 1/2;
+  }
+
+  .text{
+    grid-column: 5/11;
+    order: 2;
+    text-align: right;
+    grid-row: 1/2;
+  }
+
+  .reverse .project-links {
+    justify-content: flex-start;
+  }
+
+  .reverse ul {
+    justify-content: flex-end;
+  }
+
+  #projects ul {
+    justify-content: flex-end;
+  }
+  #projects .reverse .text {
+    grid-column: 1/7;
+    order: 2;
+    text-align: left;
+  }
+  #projects .reverse img {
+    grid-column: 5/11;
+    grid-row: 1/2;
+    justify-content: right;
+    width: 95%;
+  }
+  #projects .reverse ul {
+    justify-content: flex-start;
+  }
 }
 
 @media (min-width: 800px) {
@@ -165,4 +260,6 @@ footer {
   body {
     background-color: black;
   }
+
 }
+

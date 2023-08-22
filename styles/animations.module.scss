@@ -1,0 +1,18 @@
+.raised_hover {
+    display: inline-block;
+    transition: .3s transform;
+
+    &:hover, &:focus, &:active {
+        transform: scale(1.2) rotate(-30deg);
+    }
+  }
+
+  .tilted_hover {
+    display: inline-block;
+    transition: .3s transform .1s;
+
+    &:hover, &:focus, &:active {
+        transform: rotate(-30deg);
+    }
+
+  }

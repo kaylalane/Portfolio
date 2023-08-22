@@ -8,7 +8,7 @@ export const projects = [
     picture: "/netflix-clone.png",
   },
   {
-    title: "Language resources",
+    title: "Language Resources",
     link: "https://language-learner-ashy.vercel.app/",
     github: "https://github.com/kaylalane/language-learner",
     description:
