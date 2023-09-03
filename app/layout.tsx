@@ -14,6 +14,7 @@ export const metadata = {
   icons: {
     icon: "/icon_x16.png",
   },
+  metadataBase: new URL("https://www.kaylamarielane.com/"),
   openGraph: {
     type: "website",
     url: "https://www.kaylamarielane.com/",
@@ -25,6 +26,11 @@ export const metadata = {
         url: "/icon_x16.png",
         width: 16,
         height: 16,
+      },
+      {
+        url: "/icon_x32.png",
+        width: 32,
+        height: 32,
       },
     ],
     locale: "en-US",

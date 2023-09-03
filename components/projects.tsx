@@ -15,15 +15,6 @@ export default function Projects() {
             A Next.js project management app.
             <div className="project-links flex gap-4 mt-4">
               <Link
-                href="https://github.com/kaylalane/my-site"
-                aria-label={"Github for Project Management"}
-                className={animations.raised_hover}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaGithub size={30} />
-              </Link>
-              <Link
                 href="https://app-management-six.vercel.app"
                 aria-label={"Link to deployed website of "}
                 className={animations.raised_hover}
