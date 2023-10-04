@@ -18,7 +18,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     url: "https://www.kaylamarielane.com/",
-    title: "Kayla Marie Lane",
+    title: "Kayla Lane",
     description: "Kayla Lane's Front End Developer Portfolio",
     siteName: "Kayla Lane",
     images: [

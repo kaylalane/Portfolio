@@ -7,6 +7,41 @@ export default function Projects() {
     <article id="projects" className="projects">
       <h2 className="text-3xl text-center p-5">Projects</h2>
 
+      <section className="project">
+        <div className="text">
+          <h3>Fullstack MERN Blog</h3>
+
+          <div className="details-box">
+            A MERN stack project where I implemented a Node.js backend for the
+            first time. PM2 keeps Node running and the frontend is served
+            statically.
+            <div className=" project-links">
+              <Link
+                href="https://kaylalane.me"
+                aria-label={"Link to deployed website of "}
+                className={animations.raised_hover}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaLink size={30} />
+              </Link>
+            </div>
+          </div>
+
+          <h4>Technologies used:</h4>
+
+          <ul>
+            <li>Express</li>
+            <li>Node.js</li>
+            <li>Nginx</li>
+            <li>React Router</li>
+            <li>WS</li>
+          </ul>
+        </div>
+
+        <img src="/mern.png" />
+      </section>
+
       <section className="project reverse">
         <div className="text">
           <h3>Project Management</h3>
