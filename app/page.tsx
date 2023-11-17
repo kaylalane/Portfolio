@@ -15,12 +15,12 @@ export default async function Home() {
             Kayla Lane
           </h1>
         </div>
-        <h2>I create accessible websites.</h2>
+        <h2>I do code stuff.</h2>
         <p>
-          I&apos;m a front-end developer specializing in HTML, CSS, React.js and
+          I&apos;m a front-end developer specializing in React and
           Next.js.
         </p>
-        <ul className="py-4 text-primary dark:text-darkaccent">
+        <ul className="py-4 text-primary dark:text-darkaccent flexList">
           <li>
             <Link
               href="https://twitter.com/thekaylalane"

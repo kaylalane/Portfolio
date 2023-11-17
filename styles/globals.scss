@@ -10,8 +10,8 @@
   --transition-easing: cubic-bezier(0.5, 0, 0.5, 1);
   --animation-duration: 0.8s;
 
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: white;
 }
 
 
@@ -49,14 +49,13 @@ body {
   visibility: hidden;
 }
 
-ul {
+.flexList {
   list-style-type: none;
   display: flex;
   gap: 1rem;
   padding: 0;
   margin: 0;
   flex-flow: row wrap;
-  justify-content: flex-start;
   align-items: center;
 }
 
@@ -64,6 +63,7 @@ article {
   padding: 1rem 2rem;
   display: flex;
   flex-flow: column wrap;
+  width: 100vw;
   justify-content: center;
 }
 
@@ -96,6 +96,7 @@ header {
   gap: 1rem;
   flex-flow: column wrap;
   justify-content: center;
+
 }
 
 #contact {
@@ -140,7 +141,6 @@ form {
     padding: 0;
     margin: 0;
     margin-bottom: .5rem;
-    display: flex;
     gap: 1rem;
     flex-flow: row wrap;
     font-size: .9rem;
@@ -175,6 +175,16 @@ form {
     gap: 1rem;
     margin-top: 1rem;
     justify-content: flex-end;
+  }
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+    flex-flow: row wrap;
+    align-items: center;
   }
 }
 

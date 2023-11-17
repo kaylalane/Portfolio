@@ -1,5 +1,5 @@
-
-
+/* eslint @typescript-eslint/no-var-requires: "off" */
+const { withContentlayer } = require('next-contentlayer');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
@@ -17,4 +17,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = withContentlayer(nextConfig);

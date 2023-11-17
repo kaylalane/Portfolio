@@ -1,0 +1,92 @@
+---
+title: "My Experience Building a MERN Blog App with Nginx"
+publishedAt: "2023-11-17"
+lastUpdated: "2023-11-17"
+---
+My first fullstack project, [Kaylalane.me](https://kaylalane.me/), started from a [fullstack course](https://frontendmasters.com/courses/fullstack-v3/) on Frontend Masters. I've been building the project out for a while now and figured I'd reflect on what I've been through so far.
+
+Some key points of this experince include:
+- Spending too much time in Nginx docs, React Router docs (first time), Mongodb docs (the problem was Nginx), etc.
+- Having several StackOverflow tabs open when I barely even opened it previously
+- Navigating a bunch in the terminal, which led to Vim, and then, Neovim. While in my server, pushing and pulling to Github to use VS Code is what pushed me over the edge.
+
+Neovim is my favorite part of this learning process because I'm using VS Code again for this portfolio and my wrists are hurting. Switching files in Neovim is definetly better once you get used to it. 
+
+But I'm also writing this in bed at 2 am. 
+
+So I don't know who or what is the real problem here. I assume not me because I'm being productive when I work at 9 am today. How can I be the problem? I do no wrong. 
+
+Seriously though. Config Vim/Neovim or learn a couple of commands. I stole a bunch of config from ThePrimeagen. I don't know most of it means but Neovim looks pretty, I know how to use Harpoon and \<leader\>pv is the reason I didn't give up. That's all I need for the time being.
+
+## Nginx Stuff
+
+Anyway, the three major issues I faced configuring Nginx were:
+
+- Serving the frontend statically
+- Configuring Express API Routes
+- Configuring React Router
+
+All of these changes are done in the sites-enabled file. SSH into your server and run the following command. You should have chosen the name of your sites-enabled file.
+
+```
+sudo vi /etc/nginx/sites-enabled/mern-app
+```
+
+### Serving the Frontend Statically
+
+In your sites-enabled file, you should see root /var/www/html. Fix that route according to the static build of your website. Mine is /dist because I use Vite.
+
+```jsx
+root /var/www/app/client/dist;
+index index.html;
+```
+
+### Configuring Express API Routes
+
+
+My Express routes look like this: 
+
+```jsx
+app.use("/api/product/", products);
+app.use("/api/memories/", memories);
+app.use("/api/user/", users);
+app.use("/api/blog/", blog);
+```
+So my sites-enabled file looks like this:
+
+```jsx
+location /api/ {
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+    proxy_pass http://<Server IP>/api/;
+}
+```
+
+The ending slash is important.
+
+
+### Configuring React Router
+
+Add a location block for each React Router route and link them back to “/.” This allows React Router to handle the routes in App.jsx. 
+
+It took me a while to Google this problem correctly.
+
+```jsx
+location /memories {
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+    proxy_pass http://<Server IP>:3000/;
+}
+```
+
+### Ending Notes
+
+
+I hope that this was helpful. I know it’s not much but it was frustrating to not have things load when they worked on my localhost just fine. Here are a couple more tips:
+
+- Make sure npm i and npm run build are run if you're pulling code from Github
+- Do consider using Vim or Neovim
+- Use Certbot to get an HTTPS certificate
+- Frontend Masters has great courses if you're just starting out
+
+Good Luck!

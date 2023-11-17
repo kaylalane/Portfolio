@@ -4,9 +4,8 @@ import Toggle from "./ui/Toggle";
 import "../styles/navbar.scss";
 import { useState } from "react";
 const links = [
-  { label: "hero", href: "/" },
-  { label: "projects", href: "/#projects" },
-  { label: "contact", href: "/#contact" },
+  { label: "home", href: "/" },
+  { label: "blog", href: "/blog" },
 ];
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -75,20 +74,6 @@ export default function Navbar() {
               </a>
             </li>
           ))}
-          <li className=" ">
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://blog.kaylamarielane.com/"
-              className=" bg-primary text-white hover:text-black hover:bg-primary  dark:bg-darkaccent dark:hover:bg-darkaccent dark:text-white rounded-xl transition-transform duration-500 hover:scale-125"
-            >
-              blog
-            </a>
-          </li>
-
-          <li>
-            <Toggle />
-          </li>
         </ul>
       </nav>
     </header>
