@@ -20,15 +20,7 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "react/react-in-jsx-scope": "off",
-        "import/no-unresolved": [
-            2,
-            {
-              "ignore": [
-                "contentlayer/generated",
-                "next-contentlayer/hooks"
-              ]
-            }
-          ]
+        "react/react-in-jsx-scope": "off"
+   
     }
 }
