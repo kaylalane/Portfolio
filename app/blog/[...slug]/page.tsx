@@ -41,6 +41,7 @@ export default async function BlogPost({ params }: PostProps) {
     <div className=" flex justify-center">
       <article className=" max-w-2xl  prose prose-quoteless prose-neutral dark:prose-invert dark:prose-p:text-white">
         <h1 className="mb-2 dark:text-white">{post.title}</h1>
+        <p>{post.publishedAt.substring(0, 10)}</p>
         {post.description && (
           <p className="text-xl mt-0 text-slate-700 dark:text-white">
             {post.description}

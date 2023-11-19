@@ -15,11 +15,8 @@ export default async function Home() {
             Kayla Lane
           </h1>
         </div>
-        <h2>I do code stuff.</h2>
-        <p>
-          I&apos;m a front-end developer specializing in React and
-          Next.js.
-        </p>
+        <h2> I&apos;m a Fullstack Developer </h2>
+        <p>I specialize in React, Next.js and Node.js.</p>
         <ul className="py-4 text-primary dark:text-darkaccent flexList">
           <li>
             <Link
