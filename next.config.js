@@ -1,10 +1,7 @@
 /* eslint @typescript-eslint/no-var-requires: "off" */
-const { withContentlayer } = require('next-contentlayer');
+const { withContentlayer } = require("next-contentlayer");
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
   reactStrictMode: true,
   swcMinify: true,
   async rewrites() {

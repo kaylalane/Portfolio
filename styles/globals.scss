@@ -10,6 +10,7 @@
   --transition-easing: cubic-bezier(0.5, 0, 0.5, 1);
   --animation-duration: 0.8s;
 
+
   background-color: black;
   color: white;
 }
@@ -63,7 +64,6 @@ article {
   padding: 1rem 2rem;
   display: flex;
   flex-flow: column wrap;
-  width: 100vw;
   justify-content: center;
 }
 
@@ -73,6 +73,7 @@ section {
   flex-basis: 100%;
   flex: 1;
   border-radius: var(--border-radius);
+  max-width: 1200px;
 }
 
 header {
@@ -130,6 +131,10 @@ form {
 }
 
 .projects {
+  display: flex ;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
   h3 {
     font-size: 1.5rem;
   }

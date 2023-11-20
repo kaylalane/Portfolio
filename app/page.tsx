@@ -7,16 +7,16 @@ import animations from "../styles/animations.module.scss";
 
 export default async function Home() {
   return (
-    <>
+    <div className="">
       <article id="intro" className=" min-h-screen">
         <div className="name">
-          <p>Hi, my name is </p>
-          <h1 className=" text-primary dark:text-darkaccent block text-5xl">
+          <p>Hi, my name is</p>
+          <h1 className=" text-primary dark:text-darkaccent block text-3xl">
             Kayla Lane
           </h1>
         </div>
-        <h2> I&apos;m a Fullstack Developer </h2>
-        <p>I specialize in React, Next.js and Node.js.</p>
+        <h2 className="text-3xl"> I&apos;m a Frontend Developer </h2>
+        <p>I specialize in React, Next.js and Node.js apps.</p>
         <ul className="py-4 text-primary dark:text-darkaccent flexList">
           <li>
             <Link
@@ -40,6 +40,6 @@ export default async function Home() {
       </article>
       <Projects />
       <Contact />
-    </>
+    </div>
   );
 }
