@@ -1,4 +1,5 @@
 "use server";
+
 import auth from "./api/auth/[...nextauth]";
 import { type Session } from "next-auth";
 import { queryBuilder } from "@/lib/planetscale";
