@@ -1,12 +1,12 @@
 /* eslint-disable react/react-in-jsx-scope */
 import Link from "next/link";
-import { FaLinkedin, FaGithub, FaRegEnvelope, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaRegEnvelope, FaTwitter } from "react-icons/fa";
 import styles from "../styles/animations.module.scss";
 
 export default function Footer() {
   //small is for small print / terms and conditions
   return (
-    <footer className="flex ">
+    <footer className="">
       <ul>
         <li>
           <Link

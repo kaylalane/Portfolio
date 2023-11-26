@@ -18,13 +18,13 @@ module.exports = {
     extend: {
       colors: {
         lightbg: "#ffffff",
-        darkbg: "#030706",
+        darkbg: "#2A3033",
         purple: "#B3A2ED",
         text: "#000000",
-        primary: "#246353",
-        secondary: "#0b1e19",
+        primary: "#675C8B",
+        secondary: "#352C54",
         accent: "#194237",
-        darkaccent: "#43b194",
+        darkaccent: "#B3A1ED",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

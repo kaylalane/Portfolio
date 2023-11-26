@@ -11,7 +11,7 @@ export default function Projects() {
         <div className="text">
           <h3>Fullstack MERN Blog</h3>
 
-          <div className="details-box">
+          <div className="details-box bg-secondary dark:bg-darkaccent">
             A MERN stack project where I implemented a Node.js backend for the
             first time. PM2 keeps Node running and the frontend is served
             statically.
@@ -39,14 +39,14 @@ export default function Projects() {
           </ul>
         </div>
 
-        <img src="/mern.png" />
+        <img src="/mern.png" className="dark:border-darkaccent" />
       </section>
 
       <section className="project reverse">
         <div className="text">
           <h3>Project Management</h3>
 
-          <div className="details-box">
+          <div className="details-box bg-secondary dark:bg-darkaccent">
             A Next.js project management app.
             <div className="project-links flex gap-4 mt-4">
               <Link
@@ -68,14 +68,14 @@ export default function Projects() {
           </ul>
         </div>
 
-        <img src="/projects.png" />
+        <img src="/projects.png" className="dark:border-darkaccent" />
       </section>
 
       <section className="project">
         <div className="text">
           <h3>Do it!</h3>
 
-          <div className="details-box">
+          <div className="details-box bg-secondary dark:bg-darkaccent">
             A Firebase todo list.
             <div className=" project-links">
               <Link
@@ -109,45 +109,7 @@ export default function Projects() {
           </ul>
         </div>
 
-        <img src="/todo.png" />
-      </section>
-
-      <section className="project reverse">
-        <div className="text">
-          <h3>Language Resources</h3>
-
-          <div className="details-box">
-            A place to find language learning resources on various languages.
-            <div className=" project-links">
-              <Link
-                href="https://github.com/kaylalane/language-learner"
-                aria-label={"Github for Project Management"}
-                className={animations.raised_hover}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaGithub size={30} />
-              </Link>
-              <Link
-                href="https://language-learner-ashy.vercel.app/"
-                aria-label={"Link to deployed website of "}
-                className={animations.raised_hover}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaLink size={30} />
-              </Link>
-            </div>
-          </div>
-
-          <h4>Technologies used:</h4>
-          <ul>
-            <li>React Js</li>
-            <li>Sass</li>
-          </ul>
-        </div>
-
-        <img src="/language-resources.png" />
+        <img src="/todo.png" className=" dark:border-darkaccent" />
       </section>
     </article>
   );

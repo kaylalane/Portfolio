@@ -1,6 +1,10 @@
 import { Mdx } from "@/components/mdx-components";
+import { getViewsCount } from "@/lib/metrics";
 import { allBlogs } from "contentlayer/generated";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
+import ViewCounter from "./view-counter";
+import "../../../styles/blogs.scss";
 
 interface PostProps {
   params: {
@@ -24,13 +28,6 @@ export async function generateStaticParams(): Promise<PostProps["params"][]> {
   }));
 }
 
-async function getStaticParams({ params }: PostProps) {
-  const slug = params?.slug?.join("/");
-  const post = allBlogs.find((post) => post.url === slug);
-
-  return { props: { post } };
-}
-
 export default async function BlogPost({ params }: PostProps) {
   const post = await getPostFromParams(params);
   if (!post) {
@@ -38,10 +35,16 @@ export default async function BlogPost({ params }: PostProps) {
   }
 
   return (
-    <div className=" flex justify-center">
+    <div className="blog-page">
       <article className=" max-w-2xl  prose prose-quoteless prose-neutral dark:prose-invert dark:prose-p:text-white">
-        <h1 className="mb-2 dark:text-white">{post.title}</h1>
-        <p>{post.publishedAt.substring(0, 10)}</p>
+        <div className="blog__description">
+          <h1 className="mb-2 dark:text-white">{post.title}</h1>
+          <p>{post.publishedAt.substring(0, 10)}</p>
+          <Suspense fallback={<p className="h-5" />}>
+            {/* @ts-expect-error Server Component */}
+            <Views slug={post.url} />
+          </Suspense>
+        </div>
         {post.description && (
           <p className="text-xl mt-0 text-slate-700 dark:text-white">
             {post.description}
@@ -54,4 +57,8 @@ export default async function BlogPost({ params }: PostProps) {
   );
 }
 
+async function Views({ slug }: { slug: string }) {
+  const views = await getViewsCount();
 
+  return <ViewCounter allViews={views} slug={slug} trackView />;
+}

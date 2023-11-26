@@ -1,5 +1,5 @@
-import { unstable_cache } from "next/cache";
-import "server-only";
+"server-only"
+
 import { queryBuilder } from "./planetscale";
 
 export const getBlogViews = async () => {

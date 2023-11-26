@@ -25,7 +25,7 @@ export default function ViewCounter({
   }, []);
 
   return (
-    <p className="text-neutral-600 dark:text-neutral-400 text-sm">
+    <p className="blog__views-counter text-neutral-600 dark:text-neutral-400 ">
       {`${number.toLocaleString()} views`}
     </p>
   );

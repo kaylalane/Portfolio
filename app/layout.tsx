@@ -3,8 +3,6 @@ import Footer from "@/components/footer";
 import Navbar from "../components/navbar";
 import { Analytics } from "@vercel/analytics/react";
 
-import "../styles/globals.scss";
-
 export const metadata = {
   title: {
     default: "Kayla Lane",
@@ -61,8 +59,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
-      <body className="">
+    <html lang="en" className=" dark">
+      <body className="dark:bg-black dark:text-white">
         <Navbar />
         <main className="min-h-screen">
           {children}

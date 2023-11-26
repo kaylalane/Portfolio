@@ -4,20 +4,17 @@ import { FaTwitter, FaGithub } from "react-icons/fa";
 import Contact from "../components/contacts";
 import Projects from "../components/projects";
 import animations from "../styles/animations.module.scss";
+import "../styles/home.scss";
 
 export default async function Home() {
   return (
     <div className="">
-      <article id="intro" className=" min-h-screen">
-        <div className="name">
-          <p>Hi, my name is</p>
-          <h1 className=" text-primary dark:text-darkaccent block text-3xl">
-            Kayla Lane
-          </h1>
-        </div>
-        <h2 className="text-3xl"> I&apos;m a Frontend Developer </h2>
+      <article id="intro" className="intro min-h-screen">
+        <p>Hi, my name is</p>
+        <h2 className=" intro__name">Kayla Lane</h2>
+        <p className="intro__title"> I&apos;m a Frontend Developer </p>
         <p>I specialize in React, Next.js and Node.js apps.</p>
-        <ul className="py-4 text-primary dark:text-darkaccent flexList">
+        <ul className=" intro__icon-list">
           <li>
             <Link
               href="https://twitter.com/thekaylalane"
