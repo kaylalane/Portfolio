@@ -6,9 +6,9 @@ import { Analytics } from "@vercel/analytics/react";
 export const metadata = {
   title: {
     default: "Kayla Lane",
-    template: "%s | Kayla Lane",
+    template: " | Kayla Lane",
   },
-  description: "Kayla Lane's Front End Developer Portfolio",
+  description: "Kayla Lane's Frontend Developer Portfolio",
   icons: {
     icon: "/icon_x16.png",
   },
@@ -17,7 +17,7 @@ export const metadata = {
     type: "website",
     url: "https://www.kaylamarielane.com/",
     title: "Kayla Lane",
-    description: "Kayla Lane's Front End Developer Portfolio",
+    description: "Kayla Lane's Frontend Developer Portfolio",
     siteName: "Kayla Lane",
     images: [
       {
