@@ -28,9 +28,11 @@ export default function Projects() {
               </div>
 
               <div className="project__links">
-                <Link href={project.github} target="__blank" rel="noreferrer">
-                  <FaGithub size={30} />
-                </Link>
+                {project.github !== null && (
+                  <Link href={project.github} target="__blank" rel="noreferrer">
+                    <FaGithub size={30} />
+                  </Link>
+                )}
                 <Link href={project.link} target="__blank" rel="noreferrer">
                   <FaLink size={30} />
                 </Link>

@@ -2,7 +2,7 @@ export const projects = [
   {
     title: "MERN Blog",
     link: "https://kaylalane.me",
-    github: "https://github.com/kaylalane/kaylalane.me",
+    github: null,
     description: "A blog built with the MERN stack.",
     technologies: ["React.js", "Mongodb", "Express.js", "Node.js"],
     img: "/writing.png",
