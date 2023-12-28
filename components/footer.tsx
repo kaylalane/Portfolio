@@ -20,6 +20,8 @@ export default function Footer() {
         <li>
           <Link
             href="https://github.com/kaylalane"
+            target="__blank"
+            rel="noreferrer"
             className={styles.raised_hover}
           >
             <FaGithub className="fa-github" />
@@ -29,6 +31,8 @@ export default function Footer() {
         <li>
           <Link
             href="mailto:kaylalane188@icloud.com"
+            target="__blank"
+            rel="noreferrer"
             className={styles.raised_hover}
           >
             <FaRegEnvelope className="fa-email" />

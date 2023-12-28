@@ -60,7 +60,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className=" dark">
-      <body className="dark:bg-black dark:text-white">
+      <body className="">
         <Navbar />
         <main className="min-h-screen">
           {children}

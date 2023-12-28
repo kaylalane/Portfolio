@@ -1,124 +1,81 @@
 @import "./globals.scss";
 
-.intro__name {
-  font-size: 2.2rem;
-  font-family: var(--heading);
-  color: var(--darkPrimary);
+//HERO SECTION START
+
+.hero-section {
+  max-width: 500px;
+
+  ul {
+    margin-top: 16px;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0;
+    column-gap: 1rem;
+    font-size: 24px;
+    fill: rgb(var(--secondary));
+    svg {
+      fill: rgb(var(--secondary));
+    }
+  }
 }
 
-.intro__title {
-  font-size: 1.5rem;
-}
-
-.intro__icon-list {
-  list-style-type: none;
-  display: flex;
-  gap: 1rem;
-  padding: 1rem 0;
+.hero__name {
+  font-size: 64px;
   margin: 0;
-  flex-flow: row wrap;
-  align-items: center;
-  color: var(--darkPrimary);
-  font-size: 200%;
+  padding: 0;
 }
+
+.hero__title {
+  font-size: 25px;
+  padding: 0;
+  margin: 0;
+}
+
+//PROJECTS START
 
 .projects-container {
   display: flex;
+  flex-flow: column nowrap;
   gap: 1rem;
-  flex-flow: column wrap;
   justify-content: center;
 }
 
-#contact {
+.project {
+  flex-basis: 40%;
+  min-height: 200px;
+  position: relative;
+  margin: 0;
+  padding: 1rem;
+  background-color: rgb(var(--accent));
+  color: rgb(var(--background));
+  border: 3px black solid;
+  overflow: hidden;
+  filter: drop-shadow(4px 6px 0px rgba(var(--secondary), 1));
+
+  &:hover {
+    background-color: rgb(var(--secondary));
+  }
+}
+
+.project__information {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
+  justify-content: space-between;
+  min-height: 200px;
+}
+.project__links {
+  display: flex;
+  flex-flow: row nowrap;
   align-items: center;
+  gap: 1rem;
 }
 
-form {
-  display: flex;
-  flex-flow: column;
-  gap: 2rem;
-
-  input,
-  textarea {
-    padding: 1rem;
-    border-radius: 10px;
-    width: clamp(100px, 500px, 80vw);
-    border: solid black 2px;
-  }
-
-  .message {
-    height: 200px;
-    vertical-align: top;
-  }
-
-  #submit-button {
-    border: none;
-  }
-}
-
-.projects {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: center;
-  h3 {
-    font-size: 1.5rem;
-  }
-  h4 {
-    font-size: 1.2rem;
-  }
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    margin-bottom: 0.5rem;
-    gap: 1rem;
-    flex-flow: row wrap;
-    font-size: 0.9rem;
-    font-family: "Sora", sans-serif;
-  }
-
-  img {
-    margin: 2rem 0 4rem;
-    border-left: 2px solid #246353;
-    border-top: 2px solid #246353;
-    border-bottom: 2px solid #246353;
-    border-radius: 25px;
-    padding: 1rem;
-  }
-
-  .reverse img {
-    border-left: none;
-    border-right: 2px solid #246353;
-  }
-
-  .details-box {
-    color: white;
-    border-radius: 5px;
-    margin: 0.5rem 0;
-    padding: 1rem;
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-  .project-links {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-    justify-content: flex-end;
-  }
-
-  ul {
-    list-style-type: none;
-    display: flex;
-    gap: 1rem;
-    padding: 0;
-    margin: 0;
-    flex-flow: row wrap;
-    align-items: center;
-  }
+.project img {
+  display: block;
+  border-radius: var(--border-radius);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /** Media Queries **/
@@ -127,54 +84,6 @@ form {
   section {
     flex-basis: 40%;
   }
-
-  .project {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    gap: 1rem;
-  }
-
-  #projects img {
-    width: 60%;
-    grid-column: 1/10;
-    grid-row: 1/2;
-  }
-
-  .text {
-    grid-column: 5/11;
-    order: 2;
-    text-align: right;
-    grid-row: 1/2;
-  }
-
-  .reverse .project-links {
-    justify-content: flex-start;
-  }
-
-  .reverse ul {
-    justify-content: flex-end;
-  }
-
-  #projects ul {
-    justify-content: flex-end;
-  }
-  #projects .reverse .text {
-    grid-column: 1/7;
-    order: 2;
-    text-align: left;
-  }
-  #projects .reverse img {
-    grid-column: 5/11;
-    grid-row: 1/2;
-    justify-content: right;
-    width: 95%;
-  }
-  #projects .reverse ul {
-    justify-content: flex-start;
-  }
-}
-
-@media (min-width: 800px) {
   .projects-container {
     flex-flow: row wrap;
   }

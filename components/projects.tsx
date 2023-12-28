@@ -1,116 +1,44 @@
 import Link from "next/link";
 import { FaGithub, FaLink } from "react-icons/fa";
 import animations from "../styles/animations.module.scss";
+import { projects } from "./data";
 
 export default function Projects() {
   return (
     <article id="projects" className="projects">
-      <h2 className="text-3xl text-center p-5">Projects</h2>
+      <h2 className="text-3xl text-center p-5 ">Projects</h2>
+      <div className="projects-container">
+        {projects.map((project) => (
+          <div key={project.title} className="project basis-1/4 rounded-xl">
+            <div className="project__information">
+              <div>
+                <h3 className="align-text-bottom	text-2xl font-bold tracking-tight leading-loose">
+                  {project.title}
+                </h3>
+                <div className="flex flex-wrap gap-x-4">
+                  {project.technologies.map((tech) => (
+                    <p key={tech} className="font-normal ">
+                      {tech}
+                    </p>
+                  ))}
+                </div>
+                <p className="font-normalleading-loose">
+                  {project.description}
+                </p>
+              </div>
 
-      <section className="project">
-        <div className="text">
-          <h3>Fullstack MERN Blog</h3>
-
-          <div className="details-box bg-secondary dark:bg-darkaccent">
-            A MERN stack project where I implemented a Node.js backend for the
-            first time. PM2 keeps Node running and the frontend is served
-            statically.
-            <div className=" project-links">
-              <Link
-                href="https://kaylalane.me"
-                aria-label={"Link to deployed website of "}
-                className={animations.raised_hover}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaLink size={30} />
-              </Link>
+              <div className="project__links">
+                <Link href={project.github} target="__blank" rel="noreferrer">
+                  <FaGithub size={30} />
+                </Link>
+                <Link href={project.link} target="__blank" rel="noreferrer">
+                  <FaLink size={30} />
+                </Link>
+              </div>
             </div>
           </div>
-
-          <h4>Technologies used:</h4>
-
-          <ul>
-            <li>Express</li>
-            <li>Node.js</li>
-            <li>Nginx</li>
-            <li>React Router</li>
-            <li>WS</li>
-          </ul>
-        </div>
-
-        <img src="/mern.png" className="dark:border-darkaccent" />
-      </section>
-
-      <section className="project reverse">
-        <div className="text">
-          <h3>Project Management</h3>
-
-          <div className="details-box bg-secondary dark:bg-darkaccent">
-            A Next.js project management app.
-            <div className="project-links flex gap-4 mt-4">
-              <Link
-                href="https://app-management-six.vercel.app"
-                aria-label={"Link to deployed website of "}
-                className={animations.raised_hover}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaLink size={30} />
-              </Link>
-            </div>
-          </div>
-          <h4>Technologies used:</h4>
-          <ul className="technologies">
-            <li>Next JS</li>
-            <li>Next Auth</li>
-            <li>Postgres SQL</li>
-          </ul>
-        </div>
-
-        <img src="/projects.png" className="dark:border-darkaccent" />
-      </section>
-
-      <section className="project">
-        <div className="text">
-          <h3>Do it!</h3>
-
-          <div className="details-box bg-secondary dark:bg-darkaccent">
-            A Firebase todo list.
-            <div className=" project-links">
-              <Link
-                href="https://github.com/kaylalane/todo"
-                aria-label={"Github for Project Management"}
-                className={animations.raised_hover}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaGithub size={30} />
-              </Link>
-              <Link
-                href="https://todo-list-9b6c5.web.app/"
-                aria-label={"Link to deployed website of "}
-                className={animations.raised_hover}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaLink size={30} />
-              </Link>
-            </div>
-          </div>
-
-          <h4>Technologies used:</h4>
-
-          <ul>
-            <li>React</li>
-            <li>React Router</li>
-            <li>Tailwind</li>
-            <li>Firebase</li>
-          </ul>
-        </div>
-
-        <img src="/todo.png" className=" dark:border-darkaccent" />
-      </section>
+        ))}
+      </div>
     </article>
   );
 }

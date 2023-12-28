@@ -28,7 +28,7 @@ export default function Contact() {
 
   return (
     <article id="contact" className=" min-h-screen relative">
-      <h2 className="mx-auto text-3xl pb-6">Contact</h2>
+      <h2 className="mx-auto text-3xl pb-6 text-center p-5 ">Contact</h2>
 
       {submit ? (
         "Form Submitted!"
@@ -38,22 +38,24 @@ export default function Contact() {
           onSubmit={handleSubmit(onSubmit)}
           className="text-black"
         >
-          {/* include validation with required or other standard HTML validation rules */}
-          <input
-            aria-label="Name"
-            style={errors.nameRequired && { border: "2px solid red" }}
-            placeholder="Name"
-            {...register("nameRequired", { required: true })}
-          />
+          <div className=" flex gap-4">
+            {/* include validation with required or other standard HTML validation rules */}
+            <input
+              aria-label="Name"
+              style={errors.nameRequired && { border: "2px solid red" }}
+              placeholder="Name"
+              {...register("nameRequired", { required: true })}
+            />
 
-          {/* errors will return when field validation fails  */}
-          <input
-            aria-label="Email"
-            style={errors.mail && { border: "2px solid red" }}
-            placeholder="Email"
-            {...register("mail", { required: "Email Address is required" })}
-            aria-invalid={errors.mail ? "true" : "false"}
-          />
+            {/* errors will return when field validation fails  */}
+            <input
+              aria-label="Email"
+              style={errors.mail && { border: "2px solid red" }}
+              placeholder="Email"
+              {...register("mail", { required: "Email Address is required" })}
+              aria-invalid={errors.mail ? "true" : "false"}
+            />
+          </div>
 
           <textarea
             aria-label="Type your message here."
@@ -67,7 +69,7 @@ export default function Contact() {
           <input
             type="submit"
             role="button"
-            className="button text-white bg-primary dark:bg-darkaccent  dark:text-black"
+            className="button text-black font-semibold"
             id="submit-button"
           />
         </form>
