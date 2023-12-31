@@ -3,43 +3,34 @@ export const projects = [
     title: "MERN Blog",
     link: "https://kaylalane.me",
     github: null,
-    description: "A blog built with the MERN stack.",
-    technologies: ["React.js", "Mongodb", "Express.js", "Node.js"],
+    description: `A full-stack blog using Nginx as the web server. Users can create an account, comment on posts, and like posts. 
+      This blog is mostly for show.`,
+    technologies: [ "Mongodb", "Express.js", "React.js", "Node.js"],
     img: "/writing.png",
   },
   {
     title: "Project Management",
     link: "https://app-management-six.vercel.app/",
-    github: "https://github.com/kaylalane/my-site",
-    description: "A Netflix clone.",
+    github: null,
+    description: "A project management app .",
     technologies: ["React.js", "Next.js", "Next Auth"],
     img: "/dashboard.png",
-  },
-  {
-    title: "Language Resources",
-    link: "https://language-learner-ashy.vercel.app/",
-    github: "https://github.com/kaylalane/language-learner",
-    description:
-      "A place to find language learning resources on various languages.",
-    technologies: ["React.js", "Sass"],
-    img: "/language-resources.png",
-  },
-
-  {
-    title: "Trivia Game",
-    link: "https://trivia-game-tawny.vercel.app/",
-    github: "https://github.com/kaylalane/trivia-game",
-    description: "A trivia game to get more comfortable using React Hooks. ",
-    technologies: ["React.js", "Next.js", "Chakra UI"],
-    img: "/trivia-game.png",
   },
   {
     title: "Do it!",
     link: "https://todo-list-9b6c5.web.app/",
     github: "https://github.com/kaylalane/todo",
     description:
-      "A community todo list to assistant developers with accountability.",
-    technologies: ["React", "React Router", "Tailwind", "Firebase"],
+      "A todo list to assistant developers with accountability.",
+    technologies: ["React", "React Router", "TailwindCSS", "Firebase"],
     img: "/todo.png",
+  },
+  {
+    title: "Netflix Clone",
+    link: "https://netflix-dusky-tau.vercel.app/browse",
+    github: "https://github.com/kaylalane/netflix-clone",
+    description: "A Netflix clone.",
+    technologies: ["Next.js", "Sass"],
+    img: "/netflix-clone.png",
   },
 ];

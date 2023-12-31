@@ -38,12 +38,13 @@ export default function Contact() {
           onSubmit={handleSubmit(onSubmit)}
           className="text-black"
         >
-          <div className=" flex gap-4">
+          <div className="  md:flex gap-4">
             {/* include validation with required or other standard HTML validation rules */}
             <input
               aria-label="Name"
               style={errors.nameRequired && { border: "2px solid red" }}
               placeholder="Name"
+              className="mb-4"
               {...register("nameRequired", { required: true })}
             />
 
@@ -52,6 +53,7 @@ export default function Contact() {
               aria-label="Email"
               style={errors.mail && { border: "2px solid red" }}
               placeholder="Email"
+              className="mb-4"
               {...register("mail", { required: "Email Address is required" })}
               aria-invalid={errors.mail ? "true" : "false"}
             />
