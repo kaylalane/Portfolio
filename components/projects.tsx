@@ -8,19 +8,19 @@ import { useRef } from "react";
 import { ScrollTrigger } from "gsap/all";
 
 export default function Projects() {
-  const container = useRef();
+  const container = useRef<HTMLElement | null>(null);
 
   useGSAP(
     () => {
       gsap.registerPlugin(ScrollTrigger);
       const projects = gsap.utils.toArray(".project");
       projects.forEach((project) => {
-        const image = project.querySelector(".project__image");
-        const information = project.querySelector(".project__information");
+        const image = (project as HTMLElement).querySelector(".project__image");
+        const information = (project as HTMLElement).querySelector(".project__information");
 
         const tl = gsap.timeline({
           scrollTrigger: {
-            trigger: project,
+            trigger: project as HTMLElement,
             start: "top bottom",
             end: "bottom top",
             scrub: true,
