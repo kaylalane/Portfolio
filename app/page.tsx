@@ -13,7 +13,7 @@ export default function Home() {
         <div className=" hero-section">
           <h1 className=" hero__name">Kayla Lane</h1>
           <p className="hero__title">
-            {"//"} A frontend developer 
+            {"//"} Hobbyist developer
           </p>
           <ul >
             <li>
